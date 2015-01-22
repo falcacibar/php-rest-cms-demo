@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine	on
+
+	RewriteCond	%{DOCUMENT_ROOT}%{REQUEST_URI} !-F
+	RewriteCond	%{IS_SUBREQ} =false
+	RewriteRule	^(.*)$ index.php/$1 [NS,L]
+</IfModule>

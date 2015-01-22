@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine	on
+	
+	RewriteCond	%{IS_SUBREQ} =false
+	RewriteCond	%{DOCUMENT_ROOT}%{REQUEST_URI} !-F
+	RewriteRule	^(.*)$ %{DOCUMENT_ROOT}/ [NS,E=CTRFWK_APP:/,E=CTRFWK_APP_REQUEST:$1]
+</IfModule>
